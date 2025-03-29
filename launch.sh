@@ -77,7 +77,8 @@ main() {
         items: map({
             text: .,
             background_image: ($base + "/" + .),
-            show_pill: true
+            show_pill: true,
+            alignment: "top"
         }),
         selected: 0
     }' >/tmp/screenshots.json
