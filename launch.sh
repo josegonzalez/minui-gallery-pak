@@ -38,6 +38,9 @@ show_message() {
 
 cleanup() {
     rm -f /tmp/stay_awake
+    rm -f /tmp/screenshots
+    rm -f /tmp/screenshots.list
+    rm -f /tmp/screenshots.json
     killall minui-presenter >/dev/null 2>&1 || true
 }
 
@@ -64,28 +67,28 @@ main() {
     chmod +x "$PAK_DIR/bin/$architecture/jq"
     chmod +x "$PAK_DIR/bin/$PLATFORM/minui-presenter"
 
-    find "$SDCARD_PATH/Screenshots" -maxdepth 1 -type f | while read -r file; do
-        basename "$file"
-    done | jq -R --arg base "$SDCARD_PATH/Screenshots" '{
-        items: [.[] | {
+    find "$SDCARD_PATH/Screenshots" -maxdepth 1 -type f >/tmp/screenshots
+    touch /tmp/screenshots.list
+    while read -r file; do
+        echo "$(basename "$file")" >>/tmp/screenshots.list
+    done </tmp/screenshots
+    rm -f /tmp/screenshots
+    cat /tmp/screenshots.list | jq -R -s --arg base "$SDCARD_PATH/Screenshots" 'split("\n")[:-1] | {
+        items: map({
             text: .,
             background_image: ($base + "/" + .),
             show_pill: true
-        }],
+        }),
         selected: 0
-    }'
+    }' >/tmp/screenshots.json
 
     killall minui-presenter >/dev/null 2>&1 || true
     minui-presenter \
-        --action-button X \
-        --action-show \
-        --action-text "FORCE" \
         --cancel-show \
         --cancel-text "EXIT" \
-        --confirm-show \
-        --confirm-text "CONFIRM" \
-        --message "$message" \
-        --timeout 0
+        --timeout 0 \
+        --font-size-default 12 \
+        --file /tmp/screenshots.json
 }
 
 main "$@"
