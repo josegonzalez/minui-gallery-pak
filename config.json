@@ -1,0 +1,9 @@
+{
+    "label": "Gallery",
+    "launch": "launch.sh",
+    "description": "Launches a Gallery to view screenshots",
+    "platforms": [
+        "rg35xxplus",
+        "tg5040"
+    ]
+}
