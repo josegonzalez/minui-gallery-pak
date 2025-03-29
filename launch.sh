@@ -64,7 +64,9 @@ main() {
     chmod +x "$PAK_DIR/bin/$architecture/jq"
     chmod +x "$PAK_DIR/bin/$PLATFORM/minui-presenter"
 
-    find "$SDCARD_PATH/Screenshots" -maxdepth 1 -type f -printf "%f\n" | jq -R --arg base "$SDCARD_PATH/Screenshots" '{
+    find "$SDCARD_PATH/Screenshots" -maxdepth 1 -type f | while read -r file; do
+        basename "$file"
+    done | jq -R --arg base "$SDCARD_PATH/Screenshots" '{
         items: [.[] | {
             text: .,
             background_image: ($base + "/" + .),
