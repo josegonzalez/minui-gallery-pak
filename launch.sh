@@ -61,7 +61,7 @@ main() {
         return 1
     fi
 
-    chmod +x "$PAK_DIR/bin/$ARCHITECTURE/jq"
+    chmod +x "$PAK_DIR/bin/$architecture/jq"
     chmod +x "$PAK_DIR/bin/$PLATFORM/minui-presenter"
 
     find "$SDCARD_PATH/Screenshots" -maxdepth 1 -type f -printf "%f\n" | jq -R --arg base "$SDCARD_PATH/Screenshots" '{
