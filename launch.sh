@@ -67,6 +67,17 @@ main() {
     chmod +x "$PAK_DIR/bin/$architecture/jq"
     chmod +x "$PAK_DIR/bin/$PLATFORM/minui-presenter"
 
+    mkdir -p "$SDCARD_PATH/Screenshots"
+    if [ ! -d "$SDCARD_PATH/Screenshots" ]; then
+        show_message "Screenshots directory not found" 2
+        return 1
+    fi
+
+    if [ -z "$(ls -A "$SDCARD_PATH/Screenshots")" ]; then
+        show_message "No screenshots found" 2
+        return 1
+    fi
+
     find "$SDCARD_PATH/Screenshots" -maxdepth 1 -type f >/tmp/screenshots
     touch /tmp/screenshots.list
     while read -r file; do
