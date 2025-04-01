@@ -26,4 +26,4 @@ Browse to `Tools > Gallery` and press `A` to enter the Pak. Images can be scroll
 
 ### Debug Logging
 
-To enable debug logging, create a file named `debug` in the `$SDCARD_PATH/.userdata/$PLATFORM/Gallery` folder. Logs will be written to the `$SDCARD_PATH/.userdata/$PLATFORM/logs/` folder.
+Debug logs are written to the`$SDCARD_PATH/.userdata/$PLATFORM/logs/` folder.
