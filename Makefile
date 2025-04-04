@@ -4,7 +4,7 @@ ARCHITECTURES := arm arm64
 PLATFORMS := rg35xxplus tg5040
 
 JQ_VERSION := 1.7.1
-MINUI_PRESENTER_VERSION := 0.6.1
+MINUI_PRESENTER_VERSION := 0.7.0
 
 clean:
 	rm -f bin/*/jq || true
