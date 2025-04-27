@@ -1,14 +1,14 @@
 {
-    "name": "Gallery",
-    "type": "TOOL",
-    "description": "Launches a Gallery to view screenshots",
-    "author": "josegonzalez",
-    "repo_url": "https://github.com/josegonzalez/minui-gallery-pak",
-    "release_filename": "Gallery.pak.zip",
-    "platforms": [
-        "rg35xxplus",
-        "tg5040"
-    ],
-    "launch": "launch.sh",
-    "version": "latest"
+  "name": "Gallery",
+  "type": "TOOL",
+  "description": "Launches a Gallery to view screenshots",
+  "author": "josegonzalez",
+  "repo_url": "https://github.com/josegonzalez/minui-gallery-pak",
+  "release_filename": "Gallery.pak.zip",
+  "platforms": [
+    "rg35xxplus",
+    "tg5040"
+  ],
+  "launch": "launch.sh",
+  "version": "0.1.3"
 }
