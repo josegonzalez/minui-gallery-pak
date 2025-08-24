@@ -2,5 +2,8 @@ bin/arm/jq
 bin/arm/jq.LICENSE
 bin/arm64/jq
 bin/arm64/jq.LICENSE
+bin/miyoomini/minui-presenter
+bin/my282/minui-presenter
+bin/my355/minui-presenter
 bin/rg35xxplus/minui-presenter
 bin/tg5040/minui-presenter

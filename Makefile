@@ -1,7 +1,12 @@
 PAK_NAME := $(shell jq -r .name pak.json)
+PAK_TYPE := $(shell jq -r .type pak.json)
+PAK_FOLDER := $(shell echo $(PAK_TYPE) | cut -c1)$(shell echo $(PAK_TYPE) | tr '[:upper:]' '[:lower:]' | cut -c2-)s
+
+PUSH_SDCARD_PATH ?= /mnt/SDCARD
+PUSH_PLATFORM ?= tg5040
 
 ARCHITECTURES := arm arm64
-PLATFORMS := rg35xxplus tg5040
+PLATFORMS := miyoomini my282 my355 rg35xxplus tg5040
 
 JQ_VERSION := 1.7.1
 MINUI_PRESENTER_VERSION := 0.7.0
