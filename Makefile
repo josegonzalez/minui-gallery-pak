@@ -6,10 +6,10 @@ PUSH_SDCARD_PATH ?= /mnt/SDCARD
 PUSH_PLATFORM ?= tg5040
 
 ARCHITECTURES := arm arm64
-PLATFORMS := miyoomini my282 my355 rg35xxplus tg5040
+PLATFORMS := miyoomini my282 my355 rg35xxplus tg5040 tg5050
 
 JQ_VERSION := 1.7.1
-MINUI_PRESENTER_VERSION := 0.10.0
+MINUI_PRESENTER_VERSION := 0.12.0
 
 clean:
 	rm -f bin/*/jq || true
