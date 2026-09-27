@@ -6,6 +6,7 @@
   "repo_url": "https://github.com/josegonzalez/minui-gallery-pak",
   "release_filename": "Gallery.pak.zip",
   "platforms": [
+    "h700",
     "miyoomini",
     "my282",
     "my355",
